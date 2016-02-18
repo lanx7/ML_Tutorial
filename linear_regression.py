@@ -21,3 +21,4 @@ def gradientDescent(X, y, theta, alpha, numIterations):
 
     #print ("Theta: %f", theta)
     return theta, cost_history
+
