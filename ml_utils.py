@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy.sparse
 
 def featureNormalize(X):
     X_norm = X.copy()
@@ -25,6 +26,22 @@ def mapFeature(x1,x2, degree=6):
             new = (x1 ** (i-j)) * (x2 ** j)
             out = np.column_stack((out,new))
     return out
+
+def onehot_transform(labels):
+    data = np.ones(len(labels))
+    indptr = np.arange(len(labels)+1)
+
+    print data, np.shape(data)
+    print indptr, np.shape(indptr)
+
+    ground_truth = scipy.sparse.csr_matrix((data,labels,indptr))
+    ground_truth = np.transpose(ground_truth.todense())
+
+    ground_truth = np.squeeze(np.asarray(ground_truth))
+
+    return ground_truth
+
+
 
 def plotDecisionBoundary(theta, X, y):
     u = np.linspace(-1,1.5,50)
