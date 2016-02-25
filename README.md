@@ -21,7 +21,9 @@ Please refer to http://
 
 ### Code
 * [_test_linear_regression*.py] - Test Code for Linear Regression with input data
+* [_test_linear_regression*_tf.py] - Test Code using TensorFlow for Linear Regression 
 * [linear_regression.py] - Functions for Linear regression 
+* [linear_regression_tf.py] - Functions for Linear regression (TensorFlow Version) 
 * [ml_utils.py] - Utility functions (i.e., featureNormalize(X))
 
 ## 2. Logistic Regression
