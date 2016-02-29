@@ -11,6 +11,11 @@ def logisticRegression(X, y, theta, alpha, numIteration):
         y0_term = (1-y) * np.log(1-h)
         cost = np.sum(y1_term-y0_term) / m
 
+        #print np.shape(y1_term)
+        #print np.shape(y0_term)
+        #print np.shape(cost)
+
+
         cost_history[i] = cost
         print("Iteration %d | Cost: %f" % (i, cost))
 

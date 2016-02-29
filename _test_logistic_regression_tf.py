@@ -1,49 +1,51 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
-from logistic_regression import *
+from logistic_regression_tf import *
 import os
+from ml_utils import *
 
-PLOT_MODE = True
+PLOT_MODE = False
 
-# Logistic regression test for data1
+# Logistic regression test for data2 (Polynomial + Regularization)
 data = np.genfromtxt('data/logistic_data1.txt', delimiter=',')
 #data = np.genfromtxt('data/logistic_data3.txt', delimiter='\t')
 
 X = data[:,[0,1]]
 y = data[:,2]
 
+X, mu, sigma = featureNormalize(X)
+print X, mu, sigma
+
+
 m,n = np.shape(X)
 X = np.column_stack((np.ones(m),X))
 theta = np.zeros(n+1)
 
+Y = np.zeros([m,1])
+Y[:,0] = data[:,2]
 
 print X
 print y
 
+print m,n
 alpha = 0.003
-numIteration = 1000000
-theta = logisticRegression(X,y,theta,alpha,numIteration)
-print theta
-
-predict = predict(theta,X)
-print predict
-
-accuracy = np.mean(predict == y) * 100
-print "Accuracy is %f" % accuracy
+numIterations = 100000
 
 if PLOT_MODE == True:
-    pos = np.where(y==1)
-    neg = np.where(y==0)
+    pos = np.where(Y[:,0]==1)
+    neg = np.where(Y[:,0]==0)
     plt.figure()
     plt.scatter(X[pos,1],X[pos,2], color='blue',marker='x', s=30,label="positive")
     plt.scatter(X[neg,1],X[neg,2], color='red',marker='o', s=30)
     plt.xlabel("X1")
     plt.ylabel("X2")
-
-    #u = np.arange(20, 100, 0.1)
-    #print u
-    u = np.linspace(20,100,50)
-    #print u2
-    v = (-theta[0] - theta[1] * u) / theta[2] # z = w0 + w1x1 + w2x2
-    plt.plot(u,v)
     plt.show()
+
+theta = logisticRegression(X, Y, theta, alpha, numIterations)
+
+predict = predict(theta,X)
+print predict
+
+accuracy = np.mean(predict == Y[:,0]) * 100
+print "Accuracy is %f" % accuracy

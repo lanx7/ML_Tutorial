@@ -8,7 +8,7 @@ def linearRegression(X, Y, theta, alpha, numIterations):
     m,n = np.shape(X)
     print m,n
 
-    theta_tf = tf.Variable(tf.ones([n,1]))
+    theta_tf = tf.Variable(tf.zeros([n,1]))
 
     x_input = tf.placeholder(tf.float32, shape=(m,n))
     y_input = tf.placeholder(tf.float32, shape=(m,1))

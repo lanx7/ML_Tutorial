@@ -1,6 +1,6 @@
 import numpy as np
 import ml_utils
-
+import tensorflow as tf
 X = np.array([[1,2,3],[4,5,3],[7,8,9]])
 index = [1,2]
 print X[index]
@@ -32,3 +32,15 @@ B = np.array([[2,2],[3,3]])
 print A
 print B
 print A*B
+
+def sigmoid(inX):
+    return 1.0 / (1+ np.exp(-inX))
+
+with tf.Session() as sess:
+    theta_tf = tf.ones([1,3])*128
+
+    print theta_tf.eval()
+    print tf.sigmoid(theta_tf).eval()
+    print sigmoid(np.ones(3)*128)
+    print tf.reduce_sum(theta_tf).eval()
+    print tf.zeros([1]).eval()

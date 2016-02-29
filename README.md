@@ -34,8 +34,11 @@ Please refer to http://
 * [logistic_data3.txt] - Example from 'Machine Learning in Action' (X1, X2, Y) 
 
 ### Code
-* [_test_logistic_regression*.py] - Test Code for Logistic Regression with input data
-* [logistic_regression.py] - Functions for Linear regression 
+* [_test_logistic_regression.py] - Test Code for Logistic Regression with input data 1,3
+* [_test_logistic_regression2.py] - Test Code for Logistic Regression with input data 2
+* [_test_logistic_regression_tf.py] - Test Code using TensorFlow with input data 1,3
+* [logistic_regression.py] - Functions for Logistic regression 
+* [logistic_regression_tf.py] - Functions for Logistic regression (TensorFlow Version) 
 * [ml_utils.py] - Utility functions (i.e., mapFeature(X): Polynomial Extension)
 
 ## 3. Softmax Regression
