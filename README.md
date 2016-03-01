@@ -47,7 +47,9 @@ Please refer to http://
  
 ### Code
 * [_test_softmax.py] - Test code for Softmax Regression with Mnist Data
+* [_test_softmax_tf.py] - Test code for Tensorflow Softmax Regression with Mnist Data
 * [softmax.py] - Functions for Softmax Regression (Ref. UFLDL Tutorial)
+* [softmax_tf.py] - Functions for Softmax Regression (TensorFlow version)
 * [data_utils.py] - Utility Function for data handlng (load MNIST data)
 * [ml_utils.py] - Utility Function (onehotTransform(X)): Categoricla Data to one-hot)  
 
