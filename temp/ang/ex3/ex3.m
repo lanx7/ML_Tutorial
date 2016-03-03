@@ -1,4 +1,4 @@
-sum%% Machine Learning Online Class - Exercise 3 | Part 1: One-vs-all
+%% Machine Learning Online Class - Exercise 3 | Part 1: One-vs-all
 
 %  Instructions
 %  ------------
@@ -55,7 +55,7 @@ pause;
 %
 
 fprintf('\nTraining One-vs-All Logistic Regression...\n')
-
+num_labels
 lambda = 0.1;
 [all_theta] = oneVsAll(X, y, num_labels, lambda);
 

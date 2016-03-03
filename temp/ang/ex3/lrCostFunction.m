@@ -51,12 +51,12 @@ theta_reg(1) = 0;
 hypothesis = sigmoid (X * theta);
 y0_term = -y .* log(hypothesis);
 y1_term = (1-y) .* log(1-hypothesis);
-reg_term = lambda / (2 * m)  * sum(theta_reg .^ 2) 
-J = sum(y0_term - y1_term) / m +  reg_term 
+reg_term = lambda / (2 * m)  * sum(theta_reg .^ 2); 
+J = sum(y0_term - y1_term) / m +  reg_term ;
 
-reg_grad = lambda / m .* theta_reg 
+reg_grad = lambda / m .* theta_reg ;
 %reg_grad(1) = 0  
-grad = (X' * (hypothesis - y) / m) + reg_grad
+grad = (X' * (hypothesis - y) / m) + reg_grad;
 
 
 grad = grad(:);

@@ -19,10 +19,14 @@ p = zeros(size(X, 1), 1);
 %       function can also return the index of the max element, for more
 %       information see 'help max'. If your examples are in rows, then, you
 %       can use max(A, [], 2) to obtain the max for each row.
-%
 
+X = [ones(m, 1) X];
 
+hidden = sigmoid(X * Theta1')  % m-by-n+1 * n+1-by-25  
+hidden = [ones(m,1) hidden]
 
+hypothesis = sigmoid(hidden * Theta2')  % m-by-25+1 * 25+1-by-k   
+[v,p] = max(hypothesis,[],2);
 
 
 
